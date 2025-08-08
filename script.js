@@ -65,7 +65,6 @@ const designs = [
             },
             // 正方形レイアウト
             square: (width, height) => {
-                const baseSize = Math.min(width, height) * 0.08;
                 return `
                     <div style="
                         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -76,17 +75,19 @@ const designs = [
                         color: white;
                         padding: 10%;
                         height: 100%;
+                        width: 100%;
                         text-align: center;
+                        box-sizing: border-box;
                     ">
-                        <div style="font-size: ${baseSize * 3}px; font-weight: bold; margin-bottom: ${baseSize}px;">CREATIVE</div>
-                        <div style="font-size: ${baseSize * 1.5}px; opacity: 0.9; margin-bottom: ${baseSize * 2}px;">Resize Test</div>
+                        <div style="font-size: 4vw; font-weight: bold; margin-bottom: 1.5vw;">CREATIVE</div>
+                        <div style="font-size: 2vw; opacity: 0.9; margin-bottom: 3vw;">Resize Test</div>
                         <div style="
-                            padding: ${baseSize * 0.6}px ${baseSize * 2}px;
+                            padding: 1vw 3vw;
                             background: white;
                             color: #667eea;
-                            border-radius: ${baseSize * 3}px;
+                            border-radius: 5vw;
                             font-weight: 600;
-                            font-size: ${baseSize * 1.2}px;
+                            font-size: 1.8vw;
                         ">Learn More</div>
                     </div>
                 `;
@@ -152,7 +153,6 @@ const designs = [
                 `;
             },
             square: (width, height) => {
-                const baseSize = Math.min(width, height) * 0.08;
                 return `
                     <div style="
                         background: white;
@@ -160,18 +160,20 @@ const designs = [
                         flex-direction: column;
                         padding: 8%;
                         height: 100%;
+                        width: 100%;
+                        box-sizing: border-box;
                     ">
                         <div style="
                             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
                             height: 35%;
-                            border-radius: ${baseSize * 0.8}px;
+                            border-radius: 1vw;
                             margin-bottom: 5%;
                         "></div>
-                        <div style="font-size: ${baseSize * 2.5}px; color: #333; margin-bottom: ${baseSize * 0.5}px; font-weight: bold;">Card Design</div>
-                        <div style="font-size: ${baseSize * 1.2}px; color: #666; line-height: 1.4; flex: 1;">Responsive card design.</div>
+                        <div style="font-size: 3.5vw; color: #333; margin-bottom: 1vw; font-weight: bold;">Card Design</div>
+                        <div style="font-size: 1.8vw; color: #666; line-height: 1.4; flex: 1;">Responsive card design.</div>
                         <div style="display: flex; gap: 3%;">
-                            <div style="flex: 1; padding: ${baseSize * 0.5}px; background: #f5576c; color: white; text-align: center; border-radius: ${baseSize * 0.4}px; font-weight: 600; font-size: ${baseSize * 1.1}px;">Action 1</div>
-                            <div style="flex: 1; padding: ${baseSize * 0.5}px; background: #f093fb; color: white; text-align: center; border-radius: ${baseSize * 0.4}px; font-weight: 600; font-size: ${baseSize * 1.1}px;">Action 2</div>
+                            <div style="flex: 1; padding: 1vw; background: #f5576c; color: white; text-align: center; border-radius: 0.8vw; font-weight: 600; font-size: 1.6vw;">Action 1</div>
+                            <div style="flex: 1; padding: 1vw; background: #f093fb; color: white; text-align: center; border-radius: 0.8vw; font-weight: 600; font-size: 1.6vw;">Action 2</div>
                         </div>
                     </div>
                 `;
@@ -275,7 +277,6 @@ const designs = [
                 `;
             },
             square: (width, height) => {
-                const baseSize = Math.min(width, height) * 0.08;
                 return `
                     <div style="
                         background: linear-gradient(180deg, #0093E9 0%, #80D0C7 100%);
@@ -284,6 +285,7 @@ const designs = [
                         position: relative;
                         overflow: hidden;
                         height: 100%;
+                        width: 100%;
                     ">
                         <div style="
                             position: absolute;
@@ -304,18 +306,19 @@ const designs = [
                             align-items: center;
                             text-align: center;
                             height: 100%;
+                            box-sizing: border-box;
                         ">
-                            <div style="font-size: ${baseSize * 3.5}px; font-weight: bold; margin-bottom: ${baseSize * 0.5}px;">HERO</div>
-                            <div style="font-size: ${baseSize * 1.5}px; opacity: 0.95; margin-bottom: ${baseSize * 2}px;">Dynamic & Responsive</div>
+                            <div style="font-size: 4.5vw; font-weight: bold; margin-bottom: 1vw;">HERO</div>
+                            <div style="font-size: 2vw; opacity: 0.95; margin-bottom: 3vw;">Dynamic & Responsive</div>
                             <div style="
-                                padding: ${baseSize * 0.7}px ${baseSize * 2}px;
+                                padding: 1.2vw 3vw;
                                 background: rgba(255,255,255,0.25);
                                 backdrop-filter: blur(10px);
                                 color: white;
-                                border: 2px solid white;
-                                border-radius: ${baseSize * 0.5}px;
+                                border: 0.3vw solid white;
+                                border-radius: 1vw;
                                 font-weight: 600;
-                                font-size: ${baseSize * 1.2}px;
+                                font-size: 1.8vw;
                             ">Get Started</div>
                         </div>
                     </div>
@@ -420,8 +423,6 @@ const designs = [
                 `;
             },
             square: (width, height) => {
-                const baseSize = Math.min(width, height) * 0.05;
-                const circleSize = Math.min(width, height) * 0.35;
                 return `
                     <div style="
                         background: #fafafa;
@@ -431,14 +432,15 @@ const designs = [
                         justify-content: center;
                         position: relative;
                         height: 100%;
+                        width: 100%;
                         padding: 5%;
                         box-sizing: border-box;
                         overflow: hidden;
                     ">
                         <div style="
                             position: absolute;
-                            width: ${circleSize}px;
-                            height: ${circleSize}px;
+                            width: 35%;
+                            height: 35%;
                             background: linear-gradient(135deg, #feca57 0%, #ff6348 100%);
                             border-radius: 50%;
                             opacity: 0.1;
@@ -449,14 +451,14 @@ const designs = [
                             text-align: center;
                         ">
                             <div style="
-                                width: ${baseSize * 2.5}px;
-                                height: ${baseSize * 2.5}px;
+                                width: 3vw;
+                                height: 3vw;
                                 background: linear-gradient(135deg, #feca57 0%, #ff6348 100%);
-                                border-radius: ${baseSize * 0.6}px;
-                                margin: 0 auto ${baseSize * 0.8}px;
+                                border-radius: 0.8vw;
+                                margin: 0 auto 1.5vw;
                             "></div>
-                            <div style="font-size: ${baseSize * 1.8}px; color: #333; font-weight: 300; margin-bottom: ${baseSize * 0.3}px;">Minimal Design</div>
-                            <div style="font-size: ${baseSize * 0.9}px; color: #888; font-weight: 400;">Less is more</div>
+                            <div style="font-size: 3vw; color: #333; font-weight: 300; margin-bottom: 0.8vw;">Minimal Design</div>
+                            <div style="font-size: 1.5vw; color: #888; font-weight: 400;">Less is more</div>
                         </div>
                     </div>
                 `;
