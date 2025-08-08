@@ -415,8 +415,8 @@ const designs = [
                 `;
             },
             square: (width, height) => {
-                const baseSize = Math.min(width, height) * 0.08;
-                const circleSize = Math.min(width, height) * 0.5;
+                const baseSize = Math.min(width, height) * 0.06;
+                const circleSize = Math.min(width, height) * 0.4;
                 return `
                     <div style="
                         background: #fafafa;
@@ -426,7 +426,8 @@ const designs = [
                         justify-content: center;
                         position: relative;
                         height: 100%;
-                        padding: 10%;
+                        padding: 5%;
+                        box-sizing: border-box;
                     ">
                         <div style="
                             position: absolute;
@@ -442,14 +443,14 @@ const designs = [
                             text-align: center;
                         ">
                             <div style="
-                                width: ${baseSize * 4}px;
-                                height: ${baseSize * 4}px;
+                                width: ${baseSize * 3}px;
+                                height: ${baseSize * 3}px;
                                 background: linear-gradient(135deg, #feca57 0%, #ff6348 100%);
-                                border-radius: ${baseSize}px;
-                                margin: 0 auto ${baseSize * 1.5}px;
+                                border-radius: ${baseSize * 0.8}px;
+                                margin: 0 auto ${baseSize}px;
                             "></div>
-                            <div style="font-size: ${baseSize * 2.8}px; color: #333; font-weight: 300; margin-bottom: ${baseSize * 0.6}px;">Minimal Design</div>
-                            <div style="font-size: ${baseSize * 1.3}px; color: #888; font-weight: 400;">Less is more</div>
+                            <div style="font-size: ${baseSize * 2}px; color: #333; font-weight: 300; margin-bottom: ${baseSize * 0.4}px;">Minimal Design</div>
+                            <div style="font-size: ${baseSize}px; color: #888; font-weight: 400;">Less is more</div>
                         </div>
                     </div>
                 `;
