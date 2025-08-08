@@ -327,7 +327,7 @@ const designs = [
         name: 'ミニマル',
         layouts: {
             portrait: (width, height) => {
-                const baseSize = Math.min(width * 0.12, 12);
+                const baseSize = Math.min(width * 0.1, 10);
                 return `
                     <div style="
                         background: #fafafa;
@@ -337,22 +337,25 @@ const designs = [
                         justify-content: space-between;
                         position: relative;
                         height: 100%;
-                        padding: 20% 10%;
+                        padding: 15% 10%;
+                        box-sizing: border-box;
+                        overflow: hidden;
                     ">
                         <div style="
                             position: absolute;
-                            width: 80%;
-                            height: 30%;
+                            width: 60%;
+                            height: 20%;
                             background: linear-gradient(180deg, #feca57 0%, #ff6348 100%);
                             border-radius: 50%;
                             opacity: 0.1;
-                            top: 35%;
+                            top: 40%;
                         "></div>
                         <div style="
-                            width: ${baseSize * 3}px;
-                            height: ${baseSize * 3}px;
+                            width: ${baseSize * 2.5}px;
+                            height: ${baseSize * 2.5}px;
                             background: linear-gradient(135deg, #feca57 0%, #ff6348 100%);
-                            border-radius: ${baseSize * 0.6}px;
+                            border-radius: ${baseSize * 0.5}px;
+                            flex-shrink: 0;
                         "></div>
                         <div style="
                             position: relative;
@@ -363,15 +366,15 @@ const designs = [
                             flex-direction: column;
                             justify-content: center;
                         ">
-                            <div style="font-size: ${baseSize * 2.2}px; color: #333; font-weight: 300; margin-bottom: ${baseSize * 0.8}px;">Minimal</div>
-                            <div style="font-size: ${baseSize * 1.8}px; color: #333; font-weight: 300; margin-bottom: ${baseSize * 0.5}px;">Design</div>
-                            <div style="font-size: ${baseSize}px; color: #888; font-weight: 400;">Less is more</div>
+                            <div style="font-size: ${baseSize * 1.8}px; color: #333; font-weight: 300; margin-bottom: ${baseSize * 0.5}px;">Minimal</div>
+                            <div style="font-size: ${baseSize * 1.5}px; color: #333; font-weight: 300; margin-bottom: ${baseSize * 0.3}px;">Design</div>
+                            <div style="font-size: ${baseSize * 0.8}px; color: #888; font-weight: 400;">Less is more</div>
                         </div>
                     </div>
                 `;
             },
             landscape: (width, height) => {
-                const baseSize = Math.min(height * 0.12, 12);
+                const baseSize = Math.min(height * 0.1, 10);
                 return `
                     <div style="
                         background: #fafafa;
@@ -380,43 +383,45 @@ const designs = [
                         justify-content: center;
                         position: relative;
                         height: 100%;
-                        padding: 5% 10%;
+                        padding: 5% 8%;
+                        box-sizing: border-box;
+                        overflow: hidden;
                     ">
                         <div style="
                             position: absolute;
-                            width: 40%;
-                            height: 70%;
+                            width: 30%;
+                            height: 60%;
                             background: linear-gradient(90deg, #feca57 0%, #ff6348 100%);
                             border-radius: 50%;
                             opacity: 0.1;
-                            right: 10%;
+                            right: 15%;
                         "></div>
                         <div style="
                             display: flex;
                             align-items: center;
-                            gap: 5%;
+                            gap: 3%;
                             width: 100%;
                             position: relative;
                             z-index: 1;
                         ">
                             <div style="
-                                width: ${baseSize * 4}px;
-                                height: ${baseSize * 4}px;
+                                width: ${baseSize * 3}px;
+                                height: ${baseSize * 3}px;
                                 background: linear-gradient(135deg, #feca57 0%, #ff6348 100%);
-                                border-radius: ${baseSize * 0.8}px;
+                                border-radius: ${baseSize * 0.6}px;
                                 flex-shrink: 0;
                             "></div>
                             <div>
-                                <div style="font-size: ${baseSize * 3}px; color: #333; font-weight: 300; margin-bottom: ${baseSize * 0.3}px;">Minimal Design</div>
-                                <div style="font-size: ${baseSize * 1.3}px; color: #888; font-weight: 400;">Less is more - Landscape optimized</div>
+                                <div style="font-size: ${baseSize * 2.2}px; color: #333; font-weight: 300; margin-bottom: ${baseSize * 0.2}px;">Minimal Design</div>
+                                <div style="font-size: ${baseSize}px; color: #888; font-weight: 400;">Less is more</div>
                             </div>
                         </div>
                     </div>
                 `;
             },
             square: (width, height) => {
-                const baseSize = Math.min(width, height) * 0.06;
-                const circleSize = Math.min(width, height) * 0.4;
+                const baseSize = Math.min(width, height) * 0.05;
+                const circleSize = Math.min(width, height) * 0.35;
                 return `
                     <div style="
                         background: #fafafa;
@@ -428,6 +433,7 @@ const designs = [
                         height: 100%;
                         padding: 5%;
                         box-sizing: border-box;
+                        overflow: hidden;
                     ">
                         <div style="
                             position: absolute;
@@ -443,14 +449,14 @@ const designs = [
                             text-align: center;
                         ">
                             <div style="
-                                width: ${baseSize * 3}px;
-                                height: ${baseSize * 3}px;
+                                width: ${baseSize * 2.5}px;
+                                height: ${baseSize * 2.5}px;
                                 background: linear-gradient(135deg, #feca57 0%, #ff6348 100%);
-                                border-radius: ${baseSize * 0.8}px;
-                                margin: 0 auto ${baseSize}px;
+                                border-radius: ${baseSize * 0.6}px;
+                                margin: 0 auto ${baseSize * 0.8}px;
                             "></div>
-                            <div style="font-size: ${baseSize * 2}px; color: #333; font-weight: 300; margin-bottom: ${baseSize * 0.4}px;">Minimal Design</div>
-                            <div style="font-size: ${baseSize}px; color: #888; font-weight: 400;">Less is more</div>
+                            <div style="font-size: ${baseSize * 1.8}px; color: #333; font-weight: 300; margin-bottom: ${baseSize * 0.3}px;">Minimal Design</div>
+                            <div style="font-size: ${baseSize * 0.9}px; color: #888; font-weight: 400;">Less is more</div>
                         </div>
                     </div>
                 `;
