@@ -19,19 +19,19 @@ const designs = [
                     gap: 1vh;
                     box-sizing: border-box;
                 ">
-                    <div style="font-size: 3vw; font-weight: bold;">CREATIVE</div>
-                    <div style="display: flex; flex-direction: column; gap: 0.5vh;">
-                        <div style="font-size: 1.5vw; opacity: 0.9;">Resize Test</div>
-                        <div style="font-size: 1.2vw; opacity: 0.8; line-height: 1.2;">Optimized for<br>Portrait View</div>
+                    <div style="font-size: 2vw; font-weight: bold;">CREATIVE</div>
+                    <div style="display: flex; flex-direction: column; gap: 0.3vh;">
+                        <div style="font-size: 1vw; opacity: 0.9;">Resize Test</div>
+                        <div style="font-size: 0.8vw; opacity: 0.8; line-height: 1.2;">Optimized for<br>Portrait View</div>
                     </div>
                     <div style="
-                        padding: 0.5vh 2vw;
+                        padding: 0.3vh 1.5vw;
                         background: white;
                         color: #667eea;
-                        border-radius: 2vw;
+                        border-radius: 1.5vw;
                         font-weight: 600;
-                        font-size: 1.3vw;
-                        margin-top: 1vh;
+                        font-size: 0.9vw;
+                        margin-top: 0.5vh;
                     ">Learn More</div>
                 </div>
             `,
@@ -112,11 +112,11 @@ const designs = [
                         border-radius: 0.8vw;
                         margin-bottom: 1vh;
                     "></div>
-                    <div style="font-size: 2.5vw; color: #333; margin-bottom: 0.8vh; font-weight: bold;">Card</div>
-                    <div style="font-size: 1.2vw; color: #666; line-height: 1.3; flex: 1; overflow: hidden;">Responsive card design optimized for portrait orientation.</div>
-                    <div style="display: flex; flex-direction: column; gap: 0.5vh;">
-                        <div style="padding: 0.5vh; background: #f5576c; color: white; text-align: center; border-radius: 0.5vw; font-weight: 600; font-size: 1.2vw;">Action 1</div>
-                        <div style="padding: 0.5vh; background: #f093fb; color: white; text-align: center; border-radius: 0.5vw; font-weight: 600; font-size: 1.2vw;">Action 2</div>
+                    <div style="font-size: 1.8vw; color: #333; margin-bottom: 0.5vh; font-weight: bold;">Card</div>
+                    <div style="font-size: 0.8vw; color: #666; line-height: 1.3; flex: 1; overflow: hidden;">Responsive card design optimized for portrait orientation.</div>
+                    <div style="display: flex; flex-direction: column; gap: 0.3vh;">
+                        <div style="padding: 0.3vh; background: #f5576c; color: white; text-align: center; border-radius: 0.3vw; font-weight: 600; font-size: 0.8vw;">Action 1</div>
+                        <div style="padding: 0.3vh; background: #f093fb; color: white; text-align: center; border-radius: 0.3vw; font-weight: 600; font-size: 0.8vw;">Action 2</div>
                     </div>
                 </div>
             `,
@@ -208,17 +208,17 @@ const designs = [
                         box-sizing: border-box;
                         justify-content: space-between;
                     ">
-                        <div style="font-size: 3.5vw; font-weight: bold;">HERO</div>
-                        <div style="font-size: 1.5vw; opacity: 0.95; line-height: 1.3;">Dynamic<br>&<br>Responsive</div>
+                        <div style="font-size: 2.2vw; font-weight: bold;">HERO</div>
+                        <div style="font-size: 1vw; opacity: 0.95; line-height: 1.3;">Dynamic<br>&<br>Responsive</div>
                         <div style="
-                            padding: 0.8vh 2vw;
+                            padding: 0.5vh 1.5vw;
                             background: rgba(255,255,255,0.25);
                             backdrop-filter: blur(10px);
                             color: white;
-                            border: 0.2vw solid white;
-                            border-radius: 0.6vw;
+                            border: 0.15vw solid white;
+                            border-radius: 0.4vw;
                             font-weight: 600;
-                            font-size: 1.3vw;
+                            font-size: 0.9vw;
                         ">Get Started</div>
                     </div>
                 </div>
@@ -344,10 +344,10 @@ const designs = [
                         top: 42%;
                     "></div>
                     <div style="
-                        width: 3vw;
-                        height: 3vw;
+                        width: 2vw;
+                        height: 2vw;
                         background: linear-gradient(135deg, #feca57 0%, #ff6348 100%);
-                        border-radius: 0.6vw;
+                        border-radius: 0.4vw;
                         flex-shrink: 0;
                     "></div>
                     <div style="
@@ -359,9 +359,9 @@ const designs = [
                         flex-direction: column;
                         justify-content: center;
                     ">
-                        <div style="font-size: 2.2vw; color: #333; font-weight: 300; margin-bottom: 0.5vh;">Minimal</div>
-                        <div style="font-size: 1.8vw; color: #333; font-weight: 300; margin-bottom: 0.3vh;">Design</div>
-                        <div style="font-size: 1vw; color: #888; font-weight: 400;">Less is more</div>
+                        <div style="font-size: 1.5vw; color: #333; font-weight: 300; margin-bottom: 0.3vh;">Minimal</div>
+                        <div style="font-size: 1.2vw; color: #333; font-weight: 300; margin-bottom: 0.2vh;">Design</div>
+                        <div style="font-size: 0.7vw; color: #888; font-weight: 400;">Less is more</div>
                     </div>
                 </div>
             `,
