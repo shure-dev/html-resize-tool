@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クリエイティブリサイズ検証ツール</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="creative-styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>クリエイティブリサイズ検証ツール</h1>
+        </header>
+        
+        <div class="main-content">
+            <div class="left-panel">
+                <div class="controls">
+                    <h2>設定</h2>
+                    <div class="control-group">
+                        <label>デザインパターン:</label>
+                        <select id="designSelect">
+                            <option value="0">デザイン1: グラデーション</option>
+                            <option value="1">デザイン2: カード型</option>
+                            <option value="2">デザイン3: ヒーロー</option>
+                            <option value="3">デザイン4: ミニマル</option>
+                        </select>
+                    </div>
+                    
+                    <div class="control-group size-controls">
+                        <label>ターゲットサイズ:</label>
+                        <div class="slider-group">
+                            <label>幅: <span id="widthValue">400</span>px</label>
+                            <input type="range" id="widthSlider" min="100" max="800" value="400">
+                        </div>
+                        <div class="slider-group">
+                            <label>高さ: <span id="heightValue">300</span>px</label>
+                            <input type="range" id="heightSlider" min="100" max="800" value="300">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info-panel">
+                    <h2>情報</h2>
+                    <div class="info-item">
+                        <span class="label">入力サイズ:</span>
+                        <span id="inputSize">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">入力アスペクト比:</span>
+                        <span id="inputRatio">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">選択テンプレート:</span>
+                        <span id="selectedTemplate">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">実際のサイズ:</span>
+                        <span id="actualSize">-</span>
+                    </div>
+                </div>
+                
+                <div class="templates-section">
+                    <h2>オリジナルテンプレート</h2>
+                    <div class="templates">
+                        <div class="template-item">
+                            <h3>縦長 (1:3)</h3>
+                            <div class="template-wrapper portrait">
+                                <div id="portraitTemplate" class="creative-template"></div>
+                            </div>
+                            <p>100×300px</p>
+                        </div>
+                        <div class="template-item">
+                            <h3>正方形 (1:1)</h3>
+                            <div class="template-wrapper square">
+                                <div id="squareTemplate" class="creative-template"></div>
+                            </div>
+                            <p>150×150px</p>
+                        </div>
+                        <div class="template-item">
+                            <h3>横長 (3:1)</h3>
+                            <div class="template-wrapper landscape">
+                                <div id="landscapeTemplate" class="creative-template"></div>
+                            </div>
+                            <p>300×100px</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-panel">
+                <h2>リサイズ結果</h2>
+                <div class="result-container">
+                    <div id="resizedCreative" class="resized-creative"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
