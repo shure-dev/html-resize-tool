@@ -4,467 +4,449 @@ const designs = [
         name: 'グラデーション',
         layouts: {
             // 縦長レイアウト (height > width * 1.5)
-            portrait: (width, height) => {
-                const baseSize = Math.min(width * 0.12, 12);
-                return `
-                    <div style="
-                        background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;
-                        color: white;
-                        padding: 10%;
-                        height: 100%;
-                        text-align: center;
-                        gap: ${baseSize * 1.5}px;
-                    ">
-                        <div style="font-size: ${baseSize * 2.5}px; font-weight: bold;">CREATIVE</div>
-                        <div style="display: flex; flex-direction: column; gap: ${baseSize * 0.8}px;">
-                            <div style="font-size: ${baseSize * 1.2}px; opacity: 0.9;">Resize Test</div>
-                            <div style="font-size: ${baseSize * 0.9}px; opacity: 0.8; line-height: 1.3;">Optimized for<br>Portrait View</div>
-                        </div>
-                        <div style="
-                            padding: ${baseSize * 0.6}px ${baseSize * 1.5}px;
-                            background: white;
-                            color: #667eea;
-                            border-radius: ${baseSize * 2}px;
-                            font-weight: 600;
-                            font-size: ${baseSize}px;
-                            margin-top: ${baseSize}px;
-                        ">Learn More</div>
+            portrait: () => `
+                <div style="
+                    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    padding: 10%;
+                    height: 100%;
+                    width: 100%;
+                    text-align: center;
+                    gap: 3vh;
+                    box-sizing: border-box;
+                ">
+                    <div style="font-size: 8vw; font-weight: bold;">CREATIVE</div>
+                    <div style="display: flex; flex-direction: column; gap: 1.5vh;">
+                        <div style="font-size: 4vw; opacity: 0.9;">Resize Test</div>
+                        <div style="font-size: 3vw; opacity: 0.8; line-height: 1.3;">Optimized for<br>Portrait View</div>
                     </div>
-                `;
-            },
+                    <div style="
+                        padding: 1.5vh 4vw;
+                        background: white;
+                        color: #667eea;
+                        border-radius: 5vw;
+                        font-weight: 600;
+                        font-size: 3.5vw;
+                        margin-top: 2vh;
+                    ">Learn More</div>
+                </div>
+            `,
             // 横長レイアウト (width > height * 1.5)
-            landscape: (width, height) => {
-                const baseSize = Math.min(height * 0.12, 12);
-                return `
-                    <div style="
-                        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                        color: white;
-                        padding: 10% 5%;
-                        height: 100%;
-                    ">
-                        <div style="flex: 1;">
-                            <div style="font-size: ${baseSize * 3}px; font-weight: bold; margin-bottom: ${baseSize * 0.5}px;">CREATIVE</div>
-                            <div style="font-size: ${baseSize * 1.3}px; opacity: 0.9;">Resize Test - Landscape</div>
-                        </div>
-                        <div style="
-                            padding: ${baseSize * 0.8}px ${baseSize * 2}px;
-                            background: white;
-                            color: #667eea;
-                            border-radius: ${baseSize * 3}px;
-                            font-weight: 600;
-                            font-size: ${baseSize * 1.2}px;
-                            white-space: nowrap;
-                        ">Learn More</div>
+            landscape: () => `
+                <div style="
+                    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    color: white;
+                    padding: 10% 5%;
+                    height: 100%;
+                    width: 100%;
+                    box-sizing: border-box;
+                ">
+                    <div style="flex: 1;">
+                        <div style="font-size: 6vh; font-weight: bold; margin-bottom: 1vh;">CREATIVE</div>
+                        <div style="font-size: 2.5vh; opacity: 0.9;">Resize Test - Landscape</div>
                     </div>
-                `;
-            },
+                    <div style="
+                        padding: 2vh 5vh;
+                        background: white;
+                        color: #667eea;
+                        border-radius: 10vh;
+                        font-weight: 600;
+                        font-size: 2.5vh;
+                        white-space: nowrap;
+                    ">Learn More</div>
+                </div>
+            `,
             // 正方形レイアウト
-            square: (width, height) => {
-                return `
+            square: () => `
+                <div style="
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    padding: 10%;
+                    height: 100%;
+                    width: 100%;
+                    text-align: center;
+                    box-sizing: border-box;
+                ">
+                    <div style="font-size: 4vw; font-weight: bold; margin-bottom: 1.5vw;">CREATIVE</div>
+                    <div style="font-size: 2vw; opacity: 0.9; margin-bottom: 3vw;">Resize Test</div>
                     <div style="
-                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;
-                        color: white;
-                        padding: 10%;
-                        height: 100%;
-                        width: 100%;
-                        text-align: center;
-                        box-sizing: border-box;
-                    ">
-                        <div style="font-size: 4vw; font-weight: bold; margin-bottom: 1.5vw;">CREATIVE</div>
-                        <div style="font-size: 2vw; opacity: 0.9; margin-bottom: 3vw;">Resize Test</div>
-                        <div style="
-                            padding: 1vw 3vw;
-                            background: white;
-                            color: #667eea;
-                            border-radius: 5vw;
-                            font-weight: 600;
-                            font-size: 1.8vw;
-                        ">Learn More</div>
-                    </div>
-                `;
-            }
+                        padding: 1vw 3vw;
+                        background: white;
+                        color: #667eea;
+                        border-radius: 5vw;
+                        font-weight: 600;
+                        font-size: 1.8vw;
+                    ">Learn More</div>
+                </div>
+            `
         }
     },
     {
         name: 'カード型',
         layouts: {
-            portrait: (width, height) => {
-                const baseSize = Math.min(width * 0.12, 12);
-                return `
+            portrait: () => `
+                <div style="
+                    background: white;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 10% 8%;
+                    height: 100%;
+                    width: 100%;
+                    box-sizing: border-box;
+                ">
                     <div style="
-                        background: white;
-                        display: flex;
-                        flex-direction: column;
-                        padding: 10% 8%;
-                        height: 100%;
-                    ">
-                        <div style="
-                            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-                            width: 100%;
-                            height: ${height * 0.25}px;
-                            border-radius: ${baseSize * 0.8}px;
-                            margin-bottom: ${baseSize * 1.5}px;
-                        "></div>
-                        <div style="font-size: ${baseSize * 2}px; color: #333; margin-bottom: ${baseSize}px; font-weight: bold;">Card</div>
-                        <div style="font-size: ${baseSize * 1}px; color: #666; line-height: 1.5; flex: 1;">Responsive card design optimized for portrait orientation.</div>
-                        <div style="display: flex; flex-direction: column; gap: ${baseSize * 0.5}px;">
-                            <div style="padding: ${baseSize * 0.6}px; background: #f5576c; color: white; text-align: center; border-radius: ${baseSize * 0.4}px; font-weight: 600; font-size: ${baseSize}px;">Action 1</div>
-                            <div style="padding: ${baseSize * 0.6}px; background: #f093fb; color: white; text-align: center; border-radius: ${baseSize * 0.4}px; font-weight: 600; font-size: ${baseSize}px;">Action 2</div>
-                        </div>
-                    </div>
-                `;
-            },
-            landscape: (width, height) => {
-                const baseSize = Math.min(height * 0.12, 12);
-                return `
-                    <div style="
-                        background: white;
-                        display: flex;
-                        align-items: center;
-                        padding: 5% 8%;
-                        height: 100%;
-                        gap: 5%;
-                    ">
-                        <div style="
-                            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-                            width: 30%;
-                            height: 80%;
-                            border-radius: ${baseSize}px;
-                            flex-shrink: 0;
-                        "></div>
-                        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-                            <div style="font-size: ${baseSize * 2.5}px; color: #333; margin-bottom: ${baseSize * 0.5}px; font-weight: bold;">Card Design</div>
-                            <div style="font-size: ${baseSize * 1.1}px; color: #666; line-height: 1.4; margin-bottom: ${baseSize}px;">Optimized for landscape view.</div>
-                            <div style="display: flex; gap: ${baseSize * 0.5}px;">
-                                <div style="padding: ${baseSize * 0.5}px ${baseSize * 1.5}px; background: #f5576c; color: white; text-align: center; border-radius: ${baseSize * 0.4}px; font-weight: 600; font-size: ${baseSize}px;">Action 1</div>
-                                <div style="padding: ${baseSize * 0.5}px ${baseSize * 1.5}px; background: #f093fb; color: white; text-align: center; border-radius: ${baseSize * 0.4}px; font-weight: 600; font-size: ${baseSize}px;">Action 2</div>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            },
-            square: (width, height) => {
-                return `
-                    <div style="
-                        background: white;
-                        display: flex;
-                        flex-direction: column;
-                        padding: 8%;
-                        height: 100%;
+                        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
                         width: 100%;
-                        box-sizing: border-box;
-                    ">
-                        <div style="
-                            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-                            height: 35%;
-                            border-radius: 1vw;
-                            margin-bottom: 5%;
-                        "></div>
-                        <div style="font-size: 3.5vw; color: #333; margin-bottom: 1vw; font-weight: bold;">Card Design</div>
-                        <div style="font-size: 1.8vw; color: #666; line-height: 1.4; flex: 1;">Responsive card design.</div>
-                        <div style="display: flex; gap: 3%;">
-                            <div style="flex: 1; padding: 1vw; background: #f5576c; color: white; text-align: center; border-radius: 0.8vw; font-weight: 600; font-size: 1.6vw;">Action 1</div>
-                            <div style="flex: 1; padding: 1vw; background: #f093fb; color: white; text-align: center; border-radius: 0.8vw; font-weight: 600; font-size: 1.6vw;">Action 2</div>
+                        height: 25vh;
+                        border-radius: 2vw;
+                        margin-bottom: 3vh;
+                    "></div>
+                    <div style="font-size: 6vw; color: #333; margin-bottom: 2vh; font-weight: bold;">Card</div>
+                    <div style="font-size: 3vw; color: #666; line-height: 1.5; flex: 1;">Responsive card design optimized for portrait orientation.</div>
+                    <div style="display: flex; flex-direction: column; gap: 1.5vh;">
+                        <div style="padding: 1.5vh; background: #f5576c; color: white; text-align: center; border-radius: 1vw; font-weight: 600; font-size: 3vw;">Action 1</div>
+                        <div style="padding: 1.5vh; background: #f093fb; color: white; text-align: center; border-radius: 1vw; font-weight: 600; font-size: 3vw;">Action 2</div>
+                    </div>
+                </div>
+            `,
+            landscape: () => `
+                <div style="
+                    background: white;
+                    display: flex;
+                    align-items: center;
+                    padding: 5% 8%;
+                    height: 100%;
+                    width: 100%;
+                    gap: 5%;
+                    box-sizing: border-box;
+                ">
+                    <div style="
+                        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+                        width: 30%;
+                        height: 80%;
+                        border-radius: 2vh;
+                        flex-shrink: 0;
+                    "></div>
+                    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="font-size: 5vh; color: #333; margin-bottom: 1vh; font-weight: bold;">Card Design</div>
+                        <div style="font-size: 2.2vh; color: #666; line-height: 1.4; margin-bottom: 2vh;">Optimized for landscape view.</div>
+                        <div style="display: flex; gap: 1vw;">
+                            <div style="padding: 1.5vh 3vh; background: #f5576c; color: white; text-align: center; border-radius: 1vh; font-weight: 600; font-size: 2vh;">Action 1</div>
+                            <div style="padding: 1.5vh 3vh; background: #f093fb; color: white; text-align: center; border-radius: 1vh; font-weight: 600; font-size: 2vh;">Action 2</div>
                         </div>
                     </div>
-                `;
-            }
+                </div>
+            `,
+            square: () => `
+                <div style="
+                    background: white;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 8%;
+                    height: 100%;
+                    width: 100%;
+                    box-sizing: border-box;
+                ">
+                    <div style="
+                        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+                        height: 35%;
+                        border-radius: 1vw;
+                        margin-bottom: 5%;
+                    "></div>
+                    <div style="font-size: 3.5vw; color: #333; margin-bottom: 1vw; font-weight: bold;">Card Design</div>
+                    <div style="font-size: 1.8vw; color: #666; line-height: 1.4; flex: 1;">Responsive card design.</div>
+                    <div style="display: flex; gap: 3%;">
+                        <div style="flex: 1; padding: 1vw; background: #f5576c; color: white; text-align: center; border-radius: 0.8vw; font-weight: 600; font-size: 1.6vw;">Action 1</div>
+                        <div style="flex: 1; padding: 1vw; background: #f093fb; color: white; text-align: center; border-radius: 0.8vw; font-weight: 600; font-size: 1.6vw;">Action 2</div>
+                    </div>
+                </div>
+            `
         }
     },
     {
         name: 'ヒーロー',
         layouts: {
-            portrait: (width, height) => {
-                const baseSize = Math.min(width * 0.12, 12);
-                return `
+            portrait: () => `
+                <div style="
+                    background: linear-gradient(180deg, #0093E9 0%, #80D0C7 100%);
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+                    overflow: hidden;
+                    height: 100%;
+                    width: 100%;
+                ">
                     <div style="
-                        background: linear-gradient(180deg, #0093E9 0%, #80D0C7 100%);
+                        position: absolute;
+                        width: 200%;
+                        height: 200%;
+                        background: radial-gradient(circle at top, rgba(255,255,255,0.2) 0%, transparent 50%);
+                        top: -50%;
+                        left: -50%;
+                    "></div>
+                    <div style="
+                        position: relative;
+                        z-index: 1;
+                        padding: 20% 10% 15%;
+                        color: white;
                         display: flex;
                         flex-direction: column;
-                        position: relative;
-                        overflow: hidden;
+                        align-items: center;
+                        text-align: center;
                         height: 100%;
+                        box-sizing: border-box;
                     ">
+                        <div style="font-size: 10vw; font-weight: bold; margin-bottom: 4vh;">HERO</div>
+                        <div style="font-size: 4vw; opacity: 0.95; margin-bottom: auto; line-height: 1.5;">Dynamic<br>&<br>Responsive</div>
                         <div style="
-                            position: absolute;
-                            width: 200%;
-                            height: 200%;
-                            background: radial-gradient(circle at top, rgba(255,255,255,0.2) 0%, transparent 50%);
-                            top: -50%;
-                            left: -50%;
-                        "></div>
-                        <div style="
-                            position: relative;
-                            z-index: 1;
-                            padding: 20% 10% 15%;
+                            padding: 2vh 5vw;
+                            background: rgba(255,255,255,0.25);
+                            backdrop-filter: blur(10px);
                             color: white;
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-                            text-align: center;
-                            height: 100%;
-                        ">
-                            <div style="font-size: ${baseSize * 3.5}px; font-weight: bold; margin-bottom: ${baseSize * 2}px;">HERO</div>
-                            <div style="font-size: ${baseSize * 1.3}px; opacity: 0.95; margin-bottom: auto; line-height: 1.5;">Dynamic<br>&<br>Responsive</div>
-                            <div style="
-                                padding: ${baseSize * 0.8}px ${baseSize * 2}px;
-                                background: rgba(255,255,255,0.25);
-                                backdrop-filter: blur(10px);
-                                color: white;
-                                border: 2px solid white;
-                                border-radius: ${baseSize * 0.5}px;
-                                font-weight: 600;
-                                font-size: ${baseSize * 1.1}px;
-                            ">Get Started</div>
-                        </div>
+                            border: 0.5vw solid white;
+                            border-radius: 1.5vw;
+                            font-weight: 600;
+                            font-size: 3.5vw;
+                        ">Get Started</div>
                     </div>
-                `;
-            },
-            landscape: (width, height) => {
-                const baseSize = Math.min(height * 0.12, 12);
-                return `
+                </div>
+            `,
+            landscape: () => `
+                <div style="
+                    background: linear-gradient(90deg, #0093E9 0%, #80D0C7 100%);
+                    display: flex;
+                    position: relative;
+                    overflow: hidden;
+                    height: 100%;
+                    width: 100%;
+                ">
                     <div style="
-                        background: linear-gradient(90deg, #0093E9 0%, #80D0C7 100%);
-                        display: flex;
-                        position: relative;
-                        overflow: hidden;
-                        height: 100%;
-                    ">
-                        <div style="
-                            position: absolute;
-                            width: 150%;
-                            height: 150%;
-                            background: radial-gradient(circle at left, rgba(255,255,255,0.15) 0%, transparent 60%);
-                            top: -25%;
-                            left: -25%;
-                        "></div>
-                        <div style="
-                            position: relative;
-                            z-index: 1;
-                            padding: 5% 8%;
-                            color: white;
-                            display: flex;
-                            align-items: center;
-                            width: 100%;
-                            gap: 5%;
-                        ">
-                            <div style="flex: 1;">
-                                <div style="font-size: ${baseSize * 4}px; font-weight: bold; margin-bottom: ${baseSize * 0.5}px;">HERO SECTION</div>
-                                <div style="font-size: ${baseSize * 1.5}px; opacity: 0.95;">Dynamic & Responsive Layout</div>
-                            </div>
-                            <div style="
-                                padding: ${baseSize * 0.8}px ${baseSize * 2.5}px;
-                                background: rgba(255,255,255,0.25);
-                                backdrop-filter: blur(10px);
-                                color: white;
-                                border: 2px solid white;
-                                border-radius: ${baseSize * 0.5}px;
-                                font-weight: 600;
-                                font-size: ${baseSize * 1.3}px;
-                                white-space: nowrap;
-                            ">Get Started</div>
-                        </div>
-                    </div>
-                `;
-            },
-            square: (width, height) => {
-                return `
+                        position: absolute;
+                        width: 150%;
+                        height: 150%;
+                        background: radial-gradient(circle at left, rgba(255,255,255,0.15) 0%, transparent 60%);
+                        top: -25%;
+                        left: -25%;
+                    "></div>
                     <div style="
-                        background: linear-gradient(180deg, #0093E9 0%, #80D0C7 100%);
-                        display: flex;
-                        flex-direction: column;
                         position: relative;
-                        overflow: hidden;
-                        height: 100%;
+                        z-index: 1;
+                        padding: 5% 8%;
+                        color: white;
+                        display: flex;
+                        align-items: center;
                         width: 100%;
+                        gap: 5%;
+                        box-sizing: border-box;
                     ">
-                        <div style="
-                            position: absolute;
-                            width: 150%;
-                            height: 150%;
-                            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-                            top: -25%;
-                            left: -25%;
-                        "></div>
-                        <div style="
-                            position: relative;
-                            z-index: 1;
-                            padding: 10%;
-                            color: white;
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: center;
-                            align-items: center;
-                            text-align: center;
-                            height: 100%;
-                            box-sizing: border-box;
-                        ">
-                            <div style="font-size: 4.5vw; font-weight: bold; margin-bottom: 1vw;">HERO</div>
-                            <div style="font-size: 2vw; opacity: 0.95; margin-bottom: 3vw;">Dynamic & Responsive</div>
-                            <div style="
-                                padding: 1.2vw 3vw;
-                                background: rgba(255,255,255,0.25);
-                                backdrop-filter: blur(10px);
-                                color: white;
-                                border: 0.3vw solid white;
-                                border-radius: 1vw;
-                                font-weight: 600;
-                                font-size: 1.8vw;
-                            ">Get Started</div>
+                        <div style="flex: 1;">
+                            <div style="font-size: 8vh; font-weight: bold; margin-bottom: 1vh;">HERO SECTION</div>
+                            <div style="font-size: 3vh; opacity: 0.95;">Dynamic & Responsive Layout</div>
                         </div>
+                        <div style="
+                            padding: 2vh 5vh;
+                            background: rgba(255,255,255,0.25);
+                            backdrop-filter: blur(10px);
+                            color: white;
+                            border: 0.3vh solid white;
+                            border-radius: 1vh;
+                            font-weight: 600;
+                            font-size: 2.5vh;
+                            white-space: nowrap;
+                        ">Get Started</div>
                     </div>
-                `;
-            }
+                </div>
+            `,
+            square: () => `
+                <div style="
+                    background: linear-gradient(180deg, #0093E9 0%, #80D0C7 100%);
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+                    overflow: hidden;
+                    height: 100%;
+                    width: 100%;
+                ">
+                    <div style="
+                        position: absolute;
+                        width: 150%;
+                        height: 150%;
+                        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+                        top: -25%;
+                        left: -25%;
+                    "></div>
+                    <div style="
+                        position: relative;
+                        z-index: 1;
+                        padding: 10%;
+                        color: white;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        height: 100%;
+                        box-sizing: border-box;
+                    ">
+                        <div style="font-size: 4.5vw; font-weight: bold; margin-bottom: 1vw;">HERO</div>
+                        <div style="font-size: 2vw; opacity: 0.95; margin-bottom: 3vw;">Dynamic & Responsive</div>
+                        <div style="
+                            padding: 1.2vw 3vw;
+                            background: rgba(255,255,255,0.25);
+                            backdrop-filter: blur(10px);
+                            color: white;
+                            border: 0.3vw solid white;
+                            border-radius: 1vw;
+                            font-weight: 600;
+                            font-size: 1.8vw;
+                        ">Get Started</div>
+                    </div>
+                </div>
+            `
         }
     },
     {
         name: 'ミニマル',
         layouts: {
-            portrait: (width, height) => {
-                const baseSize = Math.min(width * 0.1, 10);
-                return `
+            portrait: () => `
+                <div style="
+                    background: #fafafa;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-between;
+                    position: relative;
+                    height: 100%;
+                    width: 100%;
+                    padding: 15% 10%;
+                    box-sizing: border-box;
+                    overflow: hidden;
+                ">
                     <div style="
-                        background: #fafafa;
+                        position: absolute;
+                        width: 60%;
+                        height: 20%;
+                        background: linear-gradient(180deg, #feca57 0%, #ff6348 100%);
+                        border-radius: 50%;
+                        opacity: 0.1;
+                        top: 40%;
+                    "></div>
+                    <div style="
+                        width: 8vw;
+                        height: 8vw;
+                        background: linear-gradient(135deg, #feca57 0%, #ff6348 100%);
+                        border-radius: 1.5vw;
+                        flex-shrink: 0;
+                    "></div>
+                    <div style="
+                        position: relative;
+                        z-index: 1;
+                        text-align: center;
+                        flex: 1;
                         display: flex;
                         flex-direction: column;
+                        justify-content: center;
+                    ">
+                        <div style="font-size: 5.5vw; color: #333; font-weight: 300; margin-bottom: 1.5vh;">Minimal</div>
+                        <div style="font-size: 4.5vw; color: #333; font-weight: 300; margin-bottom: 1vh;">Design</div>
+                        <div style="font-size: 2.5vw; color: #888; font-weight: 400;">Less is more</div>
+                    </div>
+                </div>
+            `,
+            landscape: () => `
+                <div style="
+                    background: #fafafa;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    height: 100%;
+                    width: 100%;
+                    padding: 5% 8%;
+                    box-sizing: border-box;
+                    overflow: hidden;
+                ">
+                    <div style="
+                        position: absolute;
+                        width: 30%;
+                        height: 60%;
+                        background: linear-gradient(90deg, #feca57 0%, #ff6348 100%);
+                        border-radius: 50%;
+                        opacity: 0.1;
+                        right: 15%;
+                    "></div>
+                    <div style="
+                        display: flex;
                         align-items: center;
-                        justify-content: space-between;
+                        gap: 3%;
+                        width: 100%;
                         position: relative;
-                        height: 100%;
-                        padding: 15% 10%;
-                        box-sizing: border-box;
-                        overflow: hidden;
+                        z-index: 1;
                     ">
                         <div style="
-                            position: absolute;
-                            width: 60%;
-                            height: 20%;
-                            background: linear-gradient(180deg, #feca57 0%, #ff6348 100%);
-                            border-radius: 50%;
-                            opacity: 0.1;
-                            top: 40%;
-                        "></div>
-                        <div style="
-                            width: ${baseSize * 2.5}px;
-                            height: ${baseSize * 2.5}px;
+                            width: 8vh;
+                            height: 8vh;
                             background: linear-gradient(135deg, #feca57 0%, #ff6348 100%);
-                            border-radius: ${baseSize * 0.5}px;
+                            border-radius: 1.5vh;
                             flex-shrink: 0;
                         "></div>
-                        <div style="
-                            position: relative;
-                            z-index: 1;
-                            text-align: center;
-                            flex: 1;
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: center;
-                        ">
-                            <div style="font-size: ${baseSize * 1.8}px; color: #333; font-weight: 300; margin-bottom: ${baseSize * 0.5}px;">Minimal</div>
-                            <div style="font-size: ${baseSize * 1.5}px; color: #333; font-weight: 300; margin-bottom: ${baseSize * 0.3}px;">Design</div>
-                            <div style="font-size: ${baseSize * 0.8}px; color: #888; font-weight: 400;">Less is more</div>
+                        <div>
+                            <div style="font-size: 6vh; color: #333; font-weight: 300; margin-bottom: 0.5vh;">Minimal Design</div>
+                            <div style="font-size: 2.5vh; color: #888; font-weight: 400;">Less is more</div>
                         </div>
                     </div>
-                `;
-            },
-            landscape: (width, height) => {
-                const baseSize = Math.min(height * 0.1, 10);
-                return `
+                </div>
+            `,
+            square: () => `
+                <div style="
+                    background: #fafafa;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    height: 100%;
+                    width: 100%;
+                    padding: 5%;
+                    box-sizing: border-box;
+                    overflow: hidden;
+                ">
                     <div style="
-                        background: #fafafa;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
+                        position: absolute;
+                        width: 35%;
+                        height: 35%;
+                        background: linear-gradient(135deg, #feca57 0%, #ff6348 100%);
+                        border-radius: 50%;
+                        opacity: 0.1;
+                    "></div>
+                    <div style="
                         position: relative;
-                        height: 100%;
-                        padding: 5% 8%;
-                        box-sizing: border-box;
-                        overflow: hidden;
+                        z-index: 1;
+                        text-align: center;
                     ">
                         <div style="
-                            position: absolute;
-                            width: 30%;
-                            height: 60%;
-                            background: linear-gradient(90deg, #feca57 0%, #ff6348 100%);
-                            border-radius: 50%;
-                            opacity: 0.1;
-                            right: 15%;
-                        "></div>
-                        <div style="
-                            display: flex;
-                            align-items: center;
-                            gap: 3%;
-                            width: 100%;
-                            position: relative;
-                            z-index: 1;
-                        ">
-                            <div style="
-                                width: ${baseSize * 3}px;
-                                height: ${baseSize * 3}px;
-                                background: linear-gradient(135deg, #feca57 0%, #ff6348 100%);
-                                border-radius: ${baseSize * 0.6}px;
-                                flex-shrink: 0;
-                            "></div>
-                            <div>
-                                <div style="font-size: ${baseSize * 2.2}px; color: #333; font-weight: 300; margin-bottom: ${baseSize * 0.2}px;">Minimal Design</div>
-                                <div style="font-size: ${baseSize}px; color: #888; font-weight: 400;">Less is more</div>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            },
-            square: (width, height) => {
-                return `
-                    <div style="
-                        background: #fafafa;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;
-                        position: relative;
-                        height: 100%;
-                        width: 100%;
-                        padding: 5%;
-                        box-sizing: border-box;
-                        overflow: hidden;
-                    ">
-                        <div style="
-                            position: absolute;
-                            width: 35%;
-                            height: 35%;
+                            width: 3vw;
+                            height: 3vw;
                             background: linear-gradient(135deg, #feca57 0%, #ff6348 100%);
-                            border-radius: 50%;
-                            opacity: 0.1;
+                            border-radius: 0.8vw;
+                            margin: 0 auto 1.5vw;
                         "></div>
-                        <div style="
-                            position: relative;
-                            z-index: 1;
-                            text-align: center;
-                        ">
-                            <div style="
-                                width: 3vw;
-                                height: 3vw;
-                                background: linear-gradient(135deg, #feca57 0%, #ff6348 100%);
-                                border-radius: 0.8vw;
-                                margin: 0 auto 1.5vw;
-                            "></div>
-                            <div style="font-size: 3vw; color: #333; font-weight: 300; margin-bottom: 0.8vw;">Minimal Design</div>
-                            <div style="font-size: 1.5vw; color: #888; font-weight: 400;">Less is more</div>
-                        </div>
+                        <div style="font-size: 3vw; color: #333; font-weight: 300; margin-bottom: 0.8vw;">Minimal Design</div>
+                        <div style="font-size: 1.5vw; color: #888; font-weight: 400;">Less is more</div>
                     </div>
-                `;
-            }
+                </div>
+            `
         }
     }
 ];
@@ -511,15 +493,15 @@ function applyDesignToTemplates() {
     
     // 正方形テンプレート
     const squareElement = document.getElementById('squareTemplate');
-    squareElement.innerHTML = design.layouts.square(150, 150);
+    squareElement.innerHTML = design.layouts.square();
     
     // 横長テンプレート
     const landscapeElement = document.getElementById('landscapeTemplate');
-    landscapeElement.innerHTML = design.layouts.landscape(300, 100);
+    landscapeElement.innerHTML = design.layouts.landscape();
     
     // 縦長テンプレート
     const portraitElement = document.getElementById('portraitTemplate');
-    portraitElement.innerHTML = design.layouts.portrait(100, 300);
+    portraitElement.innerHTML = design.layouts.portrait();
 }
 
 // デザインの変更
@@ -602,7 +584,7 @@ function createResizedCreative(width, height) {
     // サイズとデザインを適用
     container.style.width = `${width}px`;
     container.style.height = `${height}px`;
-    container.innerHTML = design.layouts[layoutType](width, height);
+    container.innerHTML = design.layouts[layoutType]();
 }
 
 
