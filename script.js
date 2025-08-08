@@ -12,16 +12,17 @@ const designs = [
                         display: flex;
                         flex-direction: column;
                         align-items: center;
-                        justify-content: space-between;
+                        justify-content: center;
                         color: white;
-                        padding: 15% 10%;
+                        padding: 10%;
                         height: 100%;
                         text-align: center;
+                        gap: ${baseSize * 1.5}px;
                     ">
                         <div style="font-size: ${baseSize * 2.5}px; font-weight: bold;">CREATIVE</div>
-                        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-                            <div style="font-size: ${baseSize * 1.2}px; opacity: 0.9; margin-bottom: ${baseSize * 2}px;">Resize Test</div>
-                            <div style="font-size: ${baseSize * 0.9}px; opacity: 0.8; line-height: 1.4;">Optimized for<br>Portrait View</div>
+                        <div style="display: flex; flex-direction: column; gap: ${baseSize * 0.8}px;">
+                            <div style="font-size: ${baseSize * 1.2}px; opacity: 0.9;">Resize Test</div>
+                            <div style="font-size: ${baseSize * 0.9}px; opacity: 0.8; line-height: 1.3;">Optimized for<br>Portrait View</div>
                         </div>
                         <div style="
                             padding: ${baseSize * 0.6}px ${baseSize * 1.5}px;
@@ -30,6 +31,7 @@ const designs = [
                             border-radius: ${baseSize * 2}px;
                             font-weight: 600;
                             font-size: ${baseSize}px;
+                            margin-top: ${baseSize}px;
                         ">Learn More</div>
                     </div>
                 `;
