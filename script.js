@@ -49,16 +49,16 @@ const designs = [
                     box-sizing: border-box;
                 ">
                     <div style="flex: 1;">
-                        <div style="font-size: 6vh; font-weight: bold; margin-bottom: 1vh;">CREATIVE</div>
-                        <div style="font-size: 2.5vh; opacity: 0.9;">Resize Test - Landscape</div>
+                        <div style="font-size: 4vh; font-weight: bold; margin-bottom: 0.5vh;">CREATIVE</div>
+                        <div style="font-size: 1.8vh; opacity: 0.9;">Resize Test - Landscape</div>
                     </div>
                     <div style="
-                        padding: 2vh 5vh;
+                        padding: 1.2vh 3vh;
                         background: white;
                         color: #667eea;
-                        border-radius: 10vh;
+                        border-radius: 5vh;
                         font-weight: 600;
-                        font-size: 2.5vh;
+                        font-size: 1.8vh;
                         white-space: nowrap;
                     ">Learn More</div>
                 </div>
@@ -139,11 +139,11 @@ const designs = [
                         flex-shrink: 0;
                     "></div>
                     <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-                        <div style="font-size: 5vh; color: #333; margin-bottom: 1vh; font-weight: bold;">Card Design</div>
-                        <div style="font-size: 2.2vh; color: #666; line-height: 1.4; margin-bottom: 2vh;">Optimized for landscape view.</div>
+                        <div style="font-size: 3.5vh; color: #333; margin-bottom: 0.5vh; font-weight: bold;">Card Design</div>
+                        <div style="font-size: 1.6vh; color: #666; line-height: 1.4; margin-bottom: 1vh;">Optimized for landscape view.</div>
                         <div style="display: flex; gap: 1vw;">
-                            <div style="padding: 1.5vh 3vh; background: #f5576c; color: white; text-align: center; border-radius: 1vh; font-weight: 600; font-size: 2vh;">Action 1</div>
-                            <div style="padding: 1.5vh 3vh; background: #f093fb; color: white; text-align: center; border-radius: 1vh; font-weight: 600; font-size: 2vh;">Action 2</div>
+                            <div style="padding: 1vh 2vh; background: #f5576c; color: white; text-align: center; border-radius: 0.8vh; font-weight: 600; font-size: 1.5vh;">Action 1</div>
+                            <div style="padding: 1vh 2vh; background: #f093fb; color: white; text-align: center; border-radius: 0.8vh; font-weight: 600; font-size: 1.5vh;">Action 2</div>
                         </div>
                     </div>
                 </div>
@@ -252,18 +252,18 @@ const designs = [
                         box-sizing: border-box;
                     ">
                         <div style="flex: 1;">
-                            <div style="font-size: 8vh; font-weight: bold; margin-bottom: 1vh;">HERO SECTION</div>
-                            <div style="font-size: 3vh; opacity: 0.95;">Dynamic & Responsive Layout</div>
+                            <div style="font-size: 5vh; font-weight: bold; margin-bottom: 0.5vh;">HERO SECTION</div>
+                            <div style="font-size: 2vh; opacity: 0.95;">Dynamic & Responsive Layout</div>
                         </div>
                         <div style="
-                            padding: 2vh 5vh;
+                            padding: 1.2vh 3vh;
                             background: rgba(255,255,255,0.25);
                             backdrop-filter: blur(10px);
                             color: white;
-                            border: 0.3vh solid white;
-                            border-radius: 1vh;
+                            border: 0.2vh solid white;
+                            border-radius: 0.8vh;
                             font-weight: 600;
-                            font-size: 2.5vh;
+                            font-size: 1.8vh;
                             white-space: nowrap;
                         ">Get Started</div>
                     </div>
@@ -396,15 +396,15 @@ const designs = [
                         z-index: 1;
                     ">
                         <div style="
-                            width: 8vh;
-                            height: 8vh;
+                            width: 5vh;
+                            height: 5vh;
                             background: linear-gradient(135deg, #feca57 0%, #ff6348 100%);
-                            border-radius: 1.5vh;
+                            border-radius: 1vh;
                             flex-shrink: 0;
                         "></div>
                         <div>
-                            <div style="font-size: 6vh; color: #333; font-weight: 300; margin-bottom: 0.5vh;">Minimal Design</div>
-                            <div style="font-size: 2.5vh; color: #888; font-weight: 400;">Less is more</div>
+                            <div style="font-size: 4vh; color: #333; font-weight: 300; margin-bottom: 0.3vh;">Minimal Design</div>
+                            <div style="font-size: 1.8vh; color: #888; font-weight: 400;">Less is more</div>
                         </div>
                     </div>
                 </div>
