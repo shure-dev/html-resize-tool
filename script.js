@@ -477,6 +477,9 @@ function init() {
     
     // 初期サイズの適用
     applySize();
+    
+    // 共通バナーの生成
+    generateCommonBanners();
 }
 
 // デザインをテンプレートに適用
@@ -501,6 +504,7 @@ function changeDesign(e) {
     currentDesignIndex = parseInt(e.target.value);
     applyDesignToTemplates();
     applySize();
+    generateCommonBanners(); // 共通バナーも更新
 }
 
 // アスペクト比の計算
@@ -579,6 +583,100 @@ function createResizedCreative(width, height) {
     container.innerHTML = design.layouts[layoutType](width, height);
 }
 
+
+// よくあるバナーサイズの定義
+const commonBannerSizes = [
+    // Google Ads
+    { width: 728, height: 90, platform: 'Google Ads', name: 'リーダーボード' },
+    { width: 300, height: 250, platform: 'Google Ads', name: 'インラインレクタングル' },
+    { width: 336, height: 280, platform: 'Google Ads', name: 'レクタングル大' },
+    { width: 320, height: 50, platform: 'Google Ads', name: 'モバイルバナー' },
+    { width: 320, height: 100, platform: 'Google Ads', name: 'モバイルバナー大' },
+    { width: 468, height: 60, platform: 'Google Ads', name: 'バナー' },
+    { width: 250, height: 250, platform: 'Google Ads', name: 'スクエア' },
+    { width: 200, height: 200, platform: 'Google Ads', name: 'スクエア小' },
+    { width: 160, height: 600, platform: 'Google Ads', name: 'ワイドスカイスクレイパー' },
+    { width: 300, height: 600, platform: 'Google Ads', name: 'ハーフページ' },
+    
+    // Facebook
+    { width: 1200, height: 628, platform: 'Facebook', name: 'フィード画像' },
+    { width: 1080, height: 1080, platform: 'Facebook', name: 'Instagram正方形' },
+    { width: 1080, height: 1920, platform: 'Instagram', name: 'ストーリーズ' },
+    { width: 1080, height: 1350, platform: 'Instagram', name: 'ポートレート' },
+    
+    // Twitter/X
+    { width: 1024, height: 512, platform: 'Twitter/X', name: 'ツイート画像' },
+    { width: 1500, height: 500, platform: 'Twitter/X', name: 'ヘッダー' },
+    
+    // Yahoo! Japan
+    { width: 600, height: 500, platform: 'Yahoo! Japan', name: 'レクタングル' },
+    { width: 300, height: 250, platform: 'Yahoo! Japan', name: 'レクタングル' },
+    { width: 728, height: 90, platform: 'Yahoo! Japan', name: 'スーパーバナー' },
+    { width: 320, height: 50, platform: 'Yahoo! Japan', name: 'スマホバナー' }
+];
+
+// 自動バナー生成
+function generateCommonBanners() {
+    const container = document.getElementById('commonBanners');
+    if (!container) return;
+    
+    container.innerHTML = ''; // クリア
+    
+    const design = designs[currentDesignIndex];
+    
+    commonBannerSizes.forEach((banner) => {
+        const bannerWrapper = document.createElement('div');
+        bannerWrapper.className = 'banner-item';
+        
+        // バナー情報
+        const info = document.createElement('div');
+        info.className = 'banner-info';
+        info.innerHTML = `
+            <div class="banner-platform">${banner.platform}</div>
+            <div class="banner-name">${banner.name}</div>
+            <div class="banner-size">${banner.width} × ${banner.height}px</div>
+        `;
+        
+        // バナーコンテンツ
+        const content = document.createElement('div');
+        content.className = 'banner-content';
+        content.style.width = `${Math.min(banner.width, 300)}px`;
+        content.style.height = `${Math.min(banner.height, 200)}px`;
+        
+        // スケール計算（大きいバナーは縮小表示）
+        const maxDisplayWidth = 300;
+        const maxDisplayHeight = 200;
+        const scale = Math.min(1, maxDisplayWidth / banner.width, maxDisplayHeight / banner.height);
+        
+        if (scale < 1) {
+            content.style.transform = `scale(${scale})`;
+            content.style.transformOrigin = 'top left';
+            content.style.width = `${banner.width}px`;
+            content.style.height = `${banner.height}px`;
+            
+            // コンテナサイズを調整
+            const scaledWrapper = document.createElement('div');
+            scaledWrapper.style.width = `${banner.width * scale}px`;
+            scaledWrapper.style.height = `${banner.height * scale}px`;
+            scaledWrapper.style.overflow = 'hidden';
+            scaledWrapper.appendChild(content);
+            
+            bannerWrapper.appendChild(info);
+            bannerWrapper.appendChild(scaledWrapper);
+        } else {
+            content.style.width = `${banner.width}px`;
+            content.style.height = `${banner.height}px`;
+            bannerWrapper.appendChild(info);
+            bannerWrapper.appendChild(content);
+        }
+        
+        // レイアウトを選択して適用
+        const layoutType = selectLayout(banner.width, banner.height);
+        content.innerHTML = design.layouts[layoutType](banner.width, banner.height);
+        
+        container.appendChild(bannerWrapper);
+    });
+}
 
 // ページ読み込み時に初期化
 document.addEventListener('DOMContentLoaded', init);
